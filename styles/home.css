@@ -19,6 +19,7 @@ footer{
     border-width: 70%;
     margin-top: 2em;
 }
+/*Slideshow styles*/
 #left, #right{
     max-height: 1.5em;
     border-radius: 0.5em;
@@ -44,25 +45,29 @@ footer{
     grid-auto-flow: column;
 }
 div#box1{
-    border-color: black solid 0.6px;
-    border-color: black;
+    border: black solid 0.6px;
     transition: 0.4s;
+    padding: 1em;
     text-align: center;
-    font-size: 6em;
+    font-size: 3em;
+    white-space: nowrap;
 }
 div#box2{
     margin: 0em 1em;
-    border-color: black solid 0.6px;
+    border: black solid 0.6px;
+    padding: 1em;
     transition: 0.4s;
     text-align: center;
-    font-size: 10em;
+    font-size: 4em;
+    white-space: nowrap;
 }
 div#box3{
-    border-color: black solid 0.6px;
-    border-color: black;
-    transition: 0.4s;   
+    border: black solid 0.6px;
+    transition: 0.4s;
+    padding: 1em;
     text-align: center;
-    font-size: 6em;
+    font-size: 3em;
+    white-space: nowrap;
 }
 div#createList{
     border-top: solid black 1px;
@@ -70,4 +75,7 @@ div#createList{
     padding: 1em 0em;
     margin-top: 4em;
     text-align: center;
+}
+p{
+    font-size: 0.7em;
 }

@@ -1,5 +1,6 @@
 header{
     background-color: black;
+    max-height: 8em;
 }
 nav{
     padding: 2em 0.6em 1em 0.6em;
@@ -58,7 +59,6 @@ button#nav_search:hover{
     color: white;
 }
 #navbar{
-    position: fixed;
     overflow-x: hidden;
     z-index: 1;
     width: 0%;

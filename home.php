@@ -1,3 +1,27 @@
+<?php
+    //Pass the username to the session global array
+    session_start();
+    $listItems = array();       //Stores the slideshow items
+    //Call the database to load sample lists
+    include 'includes/library.php';
+    $pdo = connectDB();
+    loadSlideshowItem($pdo, $listItems);
+
+    //Function to fetch the first 3 public lists from the db
+    function loadSlideshowItem($database, &$listItems)
+    {
+        $query = "SELECT * FROM `list`";
+        $stmt = $database->query($query);
+        $i=0;
+        foreach($stmt as $row)
+        {
+          //Test run to see content of list NOT CHECKING IF PUBLIC/PRIVATE HERE
+          $data="<p>".$row['listID']."</p>"."<p>".$row['title']."</p>"."<p>".$row['expirydate']."</p>"."<p>".$row['userID']."</p>";
+          $listItems[$i] = strval($data); 
+          $i+=1;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +39,18 @@
     <main>
         <div id="slide-container">
             <button id="left">&#xab;</button>
-            <div id="box1">ABC</div>
-            <div id="box2">BAC</div>
-            <div id="box3">CAB</div>
+
+            <?php
+                echo"<div id=box1>$listItems[3]</div>";
+                echo"<div id=box2>$listItems[1]</div>";
+                echo"<div id=box3>$listItems[2]</div>";
+            ?>
             <button id="right">&#xbb;</button>
         </div>
         <div id="createList">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
             nonummy nibh euismod tincidunt<br> ut laoreet dolore magna aliquam erat volutpat.</p>
-            <span><a href="CreateList.php">Create</a> your own list now</span>
+            <span><a href="./CreateList.php">Create</a> your own list now</span>
         </div>
     </main>
 </body>
