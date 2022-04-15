@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/e4c6fd0b9b.js" crossorigin="anonymous"></script>
-    <script defer src="./Js/home.js"></script>
-    <script defer src="./Js/navbar.js"></script>
+    <script defer src="./js/home.js"></script>
+    <script defer src="./js/navbar.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/home.css">
     <title>Home Page</title>
