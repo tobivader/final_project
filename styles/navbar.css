@@ -1,0 +1,100 @@
+header{
+    background-color: black;
+}
+nav{
+    padding: 2em 0.6em 1em 0.6em;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    position: relative;
+}
+nav div{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin-left: 6em;
+}
+div h1{
+    margin-top: 0.4em;
+}
+#logo{
+    font-size: 4em;
+    color: white;
+    padding-right: 1em;
+}
+#searchbox{
+    border: none;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    height: 3em;
+    width: 40em;
+    padding: 0.5em 1em;
+    align-self: self-end;
+    margin-bottom:  0.5em;
+    outline: none;
+}
+
+#nav_search{
+    border: none;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background-color: darkgray;
+    color: white;
+    height: 4em;
+    width: 6em;
+    align-self: self-end;
+    margin-bottom:  0.5em;
+    transition: 0.6s;
+}
+button#nav_search:hover{
+    background-color: black;
+    color: white;
+    border: white 0.1px solid;
+    transition: 0.3s;
+}
+.fa-solid.fa-yin-yang.fa-5x
+{
+    position: absolute;
+    color: white;
+}
+#navbar{
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 1;
+    width: 0%;
+    transition: 0.7s;
+    border-bottom: solid red 1px;
+}
+#nav-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#nav-content a{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+    background-color: #1D1E18;
+    text-align: center;
+    padding: 0.5em 0em;
+    display: block;
+    transition: 0.3s;
+}
+div#nav-content button{
+    font-size: 1em;
+    background-color: #c4c4c4;
+    border: solid 0.1px;
+}
+button#open{
+    font-size: 3em;
+    margin-left: 1em;
+    color: white;
+    align-self: self-end;
+    background-color: transparent;
+    border: none;
+  }
+  button#open:focus, button#open:hover{
+      color: #8f8f8f;
+  }
