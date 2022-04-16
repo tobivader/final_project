@@ -65,6 +65,19 @@ if(isset($_POST['submit'])){
     }
 
 
+    $options = ['cost' => 12];
+    $password = password_hash($password, PASSWORD_DEFAULT, $options); //Hash the password and store it in the database
+
+    $sql="INSERT INTO Users values (NULL,?,?,?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([ $username, $email, $password ]);
+
+    $_SESSION['username'] = $username; //Gets necessary session variables
+    $_SESSION['userID'] = $pdo->lastInsertId(); //Gets the last inserted ID from the database, which should associate with the just added user
+
+    header("Location: CreateList.php"); //Redirects the user to their profile page
+    exit();   
+
     // if ($valid) { //If the entered passwords match, and the username isn't already taken, continue with hashing the password
     //     $options = ['cost' => 12];
     //     $password = password_hash($password, PASSWORD_DEFAULT, $options); //Hash the password and store it in the database
@@ -76,7 +89,7 @@ if(isset($_POST['submit'])){
     //     $_SESSION['username'] = $username; //Gets necessary session variables
     //     $_SESSION['userID'] = $pdo->lastInsertId(); //Gets the last inserted ID from the database, which should associate with the just added user
 
-    //     header("Location: Home.php"); //Redirects the user to their profile page
+    //     header("Location: Create.php"); //Redirects the user to their profile page
     //     exit();   
     // }
     
@@ -97,7 +110,7 @@ if(isset($_POST['submit'])){
 <body>
     <div class="container">
         <h2>Sign Up</h2>
-        <form action="" method="post" novalidate>
+        <form action=" " method="post" novalidate>
             <div>
                 <label for="username"><b>Username:</b></label>
                 <input type="text" name="username" id="username" placeholder="Enter Username" value="<?=$username?>" required>
@@ -127,12 +140,11 @@ if(isset($_POST['submit'])){
             <button type="submit" name="submit" class="registerbtn">Sign Up</button>
 
             <div class=" ">
-                <p>Already have an account? <a href="login.php">Login</a>.</p>
+                <p>Already have an account? <a href="Login.php">Login</a>.</p>
             </div>
         </form>
     </div>
     
 </body>
 </html>
-
 
