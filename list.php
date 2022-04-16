@@ -28,7 +28,7 @@ $pdo = connectDB();
 
         </div>
         <?php
-        $query = "SELECT * FROM list2  ORDER BY listID Desc";
+        $query = "SELECT * FROM list  ORDER BY listID Desc";
         $additems = $pdo->query($query)
         ?>
 
