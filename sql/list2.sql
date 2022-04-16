@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `list2` (
   `listID` int(11) NOT NULL,
   `title` text NOT NULL,
+  `private` tinyint(1) NOT NULL DEFAULT 1,
   `checked` tinyint(1) NOT NULL DEFAULT 0,
   `items` text DEFAULT NULL,
   `exp_date` date NOT NULL DEFAULT current_timestamp()
