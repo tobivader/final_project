@@ -5,10 +5,10 @@
     //Call the database to load sample lists
     include 'includes/library.php';
     $pdo = connectDB();
-    loadSlideshowItem($pdo, $listItems);
+    loadListItems($pdo, $listItems);
 
     //Function to fetch the first 3 public lists from the db
-    function loadSlideshowItem($database, &$listItems)
+    function loadListItems($database, &$listItems)
     {
         $query = "SELECT * FROM `list`";
         $stmt = $database->query($query);
