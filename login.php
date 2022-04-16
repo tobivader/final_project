@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="css/MainStyle.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Lato:300,400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1c8ee6a0f5.js" crossorigin="anonymous"></script>
 </head>
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
     <div class="main-box">
         <h1>Login</h1>
         <div class="login-box">
-            <form id="main-form" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST"> <!-- Self processing form that validates entered username and password -->
+            <form id="main-form" action=" " method="POST"> <!-- Self processing form that validates entered username and password -->
                 <div>
                     <label for="username"><i class="fas fa-envelope"></i></label>
                     <input id="username" name="username" type="text" placeholder="Username" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>"> <!-- Loads from cookie if it exists -->
