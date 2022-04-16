@@ -31,6 +31,7 @@
     <script defer src="./js/home.js"></script>
     <script defer src="./js/navbar.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/master.css">
     <link rel="stylesheet" href="./styles/home.css">
     <title>Home Page</title>
 </head>

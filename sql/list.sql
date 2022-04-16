@@ -53,7 +53,7 @@ INSERT INTO `list` (`listID`, `userID`, `title`, `private`, `checked`, `exp_date
 --
 ALTER TABLE `list`
   ADD PRIMARY KEY (`listID`),
-  ADD FOREIGN KEY ('userID' ) REFERENCES 'Users' ('userID' )
+  ADD FOREIGN KEY ('userID' ) REFERENCES 'Users' ('userID' );
 
 --
 -- AUTO_INCREMENT for dumped tables

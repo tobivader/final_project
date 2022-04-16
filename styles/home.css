@@ -1,13 +1,4 @@
-@import "./reset.css";
 @import "./navbar.css";  
-body {
-    font-size: 100%;
-    min-width: 100vw; 
-    min-height: 100vh; 
-    max-width: 100vw; 
-    max-height: 100vh;
-  }
-  
 main{
     display: grid;
     grid-template-rows: 60% 30%;
