@@ -2,25 +2,25 @@
 session_start();
 require "./includes/library.php";
 
-//if user doesnt have a username  
-if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) { // password or username instead of password
-    header("Location: Login.php");
-    exit();
-}
+// //if user doesnt have a username  
+// if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) { // password or username instead of password
+//     header("Location: Login.php");
+//     exit();
+// }
 
-if (isset($_POST['submit'])) {  
+if (isset($_POST['submit'])) {
 
-	$pdo = connectDB(); 
+	$pdo = connectDB();
 
-    $date = $_POST['date'];
-    $private = 0;
-    if (!empty($_POST['privacy'])) {
-        $private = 1;
-    }
-    $query="INSERT INTO list (`title`, `userID`, `expirydate`, `description`, `private`) VALUES (?,?,?,?,?)";
-    $statement = $pdo->prepare($query);
-    $statement->execute([$_POST['title'], $_SESSION['userID'], $date, $_POST['description'], $private]);
-    header("Refresh:0"); // refreshses the page , if the user wants to continue making the list
+	$date = $_POST['date'];
+	$private = 0;
+	if (!empty($_POST['privacy'])) {
+		$private = 1;
+	}
+	$query = "INSERT INTO list (`title`, `userID`, `expirydate`, `description`, `private`) VALUES (?,?,?,?,?)";
+	$statement = $pdo->prepare($query);
+	$statement->execute([$_POST['title'], $_SESSION['userID'], $date, $_POST['description'], $private]);
+	header("Refresh:0"); // refreshses the page , if the user wants to continue making the list
 }
 ?>
 
@@ -93,13 +93,12 @@ if (isset($_POST['submit'])) {
 						<h4>List Profile</h4>
 						<div>
 							<span style="text-align:left;">List Title <input name="title" type="text"></span>
-							<span>ExpiryDate <input name="date" type="datetime-local" id = "Test_DatetimeLocal"> </span>
+							<span>ExpiryDate <input name="date" type="datetime-local" id="Test_DatetimeLocal"> </span>
 							<!-- <span> <input type = "date" id = "date" name = "date" value = "2022--03--21" min = "2022-03-21" max = "2023-03-21"  >  </span> -->
 						</div>
 						<div>
 							<!-- Description, required before form submission -->
-							<span style="text-align: left;">Description <textarea name="description"
-									id="description"></textarea></span>
+							<span style="text-align: left;">Description <textarea name="description" id="description"></textarea></span>
 						</div>
 						<div>
 							<label for="privacy"></i>Private</label>
