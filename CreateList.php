@@ -31,49 +31,17 @@ if (isset($_POST['submit'])) {
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles/navbar.css">
 	<link rel="stylesheet" href="styles/CreateList.css">
 	<title>Create List</title>
+	<script defer src="scripts/navbar.js"></script>
 	<script defer src="scripts/script.js"> </script>
 </head>
 
 <body>
 	<!-- header containing log in and checkout button -->
 	<!-- sub header showing Gift registry and wishlist -->
-	<section id="nav" class=" ">
-		<div class=" ">
-
-			<nav class="main">
-				<ul class="horizontal unstyled clearfix">
-
-					<li>
-						<a href="/" class="">
-							<span>Home</span></a>
-					</li>
-
-					<li class="dropdown"><a href="/apps/giftregistry" class=" current">
-							<span>Gift Registry</span></a>
-					</li>
-
-					<li>
-						<a href="/apps/giftregistry/wishlist" class="">
-							<span>Wishlist</span></a>
-					</li>
-
-				</ul>
-			</nav> <!-- /.main -->
-
-		</div>
-
-	</section>
-
-
-	<!-- Logo of the weedding register shop -->
-	<div class="logo">
-		<h1>
-			<a href="/"> Gifty </a>
-		</h1>
-	</div>
-
+	<?php include 'includes/navigation_bar.php';?>
 
 	<form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" class=" ">
 		<div class=" ">
