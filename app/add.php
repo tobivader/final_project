@@ -12,7 +12,7 @@ if (isset($_POST['additem'])) {
     if (empty($title)) {
         header("Locatiom: ../list.php?mess=error");
     } else {
-        $stmt = $pdo->prepare("INSERT INTO list2(title) VALUE(?)");
+        $stmt = $pdo->prepare("INSERT INTO list(title) VALUE(?)");
         $res = $stmt->execute([$title]);
         if ($res) {
             header("Location: ../list.php?mess =success");
