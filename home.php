@@ -16,7 +16,7 @@
         foreach($stmt as $row)
         {
           //Test run to see content of list NOT CHECKING IF PUBLIC/PRIVATE HERE
-          $data="<p>".$row['listID']."</p>"."<p>".$row['title']."</p>"."<p>".$row['expirydate']."</p>"."<p>".$row['userID']."</p>";
+          $data="<p>".$row['listID']."</p>"."<p>".$row['title']."</p>"."<p>".$row['exp_date']."</p>";
           $listItems[$i] = strval($data); 
           $i+=1;
         }
@@ -41,7 +41,7 @@
             <button id="left">&#xab;</button>
 
             <?php
-                echo"<div id=box1>$listItems[3]</div>";
+                echo"<div id=box1>$listItems[0]</div>";
                 echo"<div id=box2>$listItems[1]</div>";
                 echo"<div id=box3>$listItems[2]</div>";
             ?>
