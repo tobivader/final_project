@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `list` (
   `listID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
   `title` text NOT NULL,
   `private` tinyint(1) NOT NULL DEFAULT 1,
   `checked` tinyint(1) NOT NULL DEFAULT 0,
-  `items` text DEFAULT NULL,
   `exp_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -39,10 +39,10 @@ CREATE TABLE IF NOT EXISTS `list` (
 -- Dumping data for table `list`
 --
 
-INSERT INTO `list` (`listID`, `title`, `checked`, `items`, `exp_date`) VALUES
-(1, 'e2ffewf', 1, NULL, '2022-04-16'),
-(2, 'efe', 0, NULL, '2022-04-16'),
-(3, 'khcjgggk', 0, NULL, '2022-04-16');
+INSERT INTO `list` (`listID`, `userID`, `title`, `private`, `checked`, `exp_date`) VALUES
+(1, 1, 'Wedding list', 0, 1, '2022-04-16'),
+(2, 1, 'To do list',1,0, '2022-04-16'),
+(3, 1, 'Grocery list',0, 0, '2022-04-16');
 
 --
 -- Indexes for dumped tables
@@ -52,7 +52,8 @@ INSERT INTO `list` (`listID`, `title`, `checked`, `items`, `exp_date`) VALUES
 -- Indexes for table `list`
 --
 ALTER TABLE `list`
-  ADD PRIMARY KEY (`listID`);
+  ADD PRIMARY KEY (`listID`)
+  ADD FOREIGN KEY ('userID' ) REFERENCES 'Users' ('userID' )
 
 --
 -- AUTO_INCREMENT for dumped tables
