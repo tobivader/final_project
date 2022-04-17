@@ -51,7 +51,7 @@
         <div id="createList">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
             nonummy nibh euismod tincidunt<br> ut laoreet dolore magna aliquam erat volutpat.</p>
-            <span><a href="./CreateList.php">Create</a> your own list now</span>
+            <span><a href="./list.php">Create</a> your own list now</span>
         </div>
     </main>
 </body>
