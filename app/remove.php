@@ -1,23 +1,19 @@
 <?php
 require "./includes/library.php";
-// require_once("includes/library.php");
-
 $pdo = connectDB();
-if (isset($_POST['additem'])) {
-    // require_once("./includes/library.php");
+if (isset($_POST['id'])) {
 
 
-
-    $title = $_POST['additem'];
-    if (empty($title)) {
-        header("Locatiom: ../list.php?mess=error");
+    $id = $_POST['id'];
+    if (empty($id)) {
+        echo  0;
     } else {
-        $stmt = $pdo->prepare("INSERT INTO list2(title) VALUE(?)");
-        $res = $stmt->execute([$title]);
+        $stmt = $pdo->prepare("DELETE FROM list WHERE listID=?");
+        $res = $stmt->execute([$id]);
         if ($res) {
-            header("Location: ../list.php?mess =success");
+            echo "Are you sure ??";
         } else {
-            header("Location: ../list.php");
+            echo 0;
         }
         $pdo = null;
         exit();
@@ -25,3 +21,4 @@ if (isset($_POST['additem'])) {
 } else {
     header("Location: ../list.ph?mess=error");
 }
+?>
