@@ -10,9 +10,9 @@
 </nav>
 <div id="navbar">
     <div id="nav-content">
-        <a id="navbar_home" href="#">Home</a>
+        <a id="navbar_home" href="./home.php">Home</a>
         <a id="navbar_acc" href="#">Account</a>
-        <a id="navbar_ml" href="#">Manage Lists</a>
+        <a id="navbar_ml" href="./list.php">Manage Lists</a>
         <a id="navbar_lo" href="#">Logout</a>
     </div>
 </div>
