@@ -53,7 +53,7 @@ function rightButton()
 function autoSlide()
 {
     leftButton();
-    setTimeout(autoSlide, 6*1000);
+    setTimeout(autoSlide, 7*1000);
 }
 
 window.addEventListener("DOMContentLoaded", () =>{

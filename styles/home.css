@@ -36,6 +36,7 @@ footer{
     grid-auto-flow: column;
 }
 div#box1{
+    z-index: -1;
     border: black solid 0.6px;
     height: 15em;
     width: 18em;
@@ -47,6 +48,7 @@ div#box1{
     overflow: clip;
 }
 div#box2{
+    z-index: -1;
     margin: 0em 1em;
     height: 15em;
     width: 18em;
@@ -59,6 +61,7 @@ div#box2{
     overflow: clip;
 }
 div#box3{
+    z-index: -1;
     border: black solid 0.6px;
     height: 15em;
     width: 18em;
@@ -70,7 +73,6 @@ div#box3{
     overflow: clip;
 }
 .fade{
-
     opacity: 0;
 }
 div#createList{
