@@ -34,7 +34,9 @@ div h1{
     margin-bottom:  0.5em;
     outline: none;
 }
-
+form{
+    display: flex;
+}
 #nav_search{
     border: none;
     border-top-right-radius: 0.5em;

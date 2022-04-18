@@ -1,5 +1,4 @@
 <?php
-    //Pass the username to the session global array
     session_start();
     $listItems = array();       //Stores the slideshow items
     //Call the database to load sample lists
