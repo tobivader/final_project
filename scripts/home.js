@@ -53,7 +53,7 @@ function rightButton()
 function autoSlide()
 {
     leftButton();
-    setTimeout(autoSlide, 8*1000);
+    setTimeout(autoSlide, 6*1000);
 }
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () =>{
     const left= document.querySelector("button#left");
     const right= document.querySelector("button#right");
 
-    //autoSlide();    //Autoslide show after 8 secs
+    autoSlide();    //Autoslide show after 6 secs
 
     left.addEventListener("click",function()   //Event listener for left Button
     {

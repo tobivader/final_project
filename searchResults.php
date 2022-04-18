@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <?php include'includes/navigation_bar.php';?>
     <main>
         <h1>Search results:</h1>
-        
+
     </main>
     <footer></footer>
 </body>
