@@ -31,6 +31,7 @@
     <script defer src="./js/home.js"></script>
     <script defer src="./js/navbar.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/master.css">
     <link rel="stylesheet" href="./styles/home.css">
     <title>Home Page</title>
 </head>
@@ -50,7 +51,7 @@
         <div id="createList">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
             nonummy nibh euismod tincidunt<br> ut laoreet dolore magna aliquam erat volutpat.</p>
-            <span><a href="./CreateList.php">Create</a> your own list now</span>
+            <span><a href="./list.php">Create</a> your own list now</span>
         </div>
     </main>
 </body>

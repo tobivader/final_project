@@ -1,6 +1,6 @@
 <?php
 require "./includes/library.php";
-// require_once("includes/library.php");
+
 
 $pdo = connectDB();
 if (isset($_POST['additem'])) {
@@ -9,8 +9,8 @@ if (isset($_POST['additem'])) {
 
 
     $title = $_POST['additem'];
-    if (empty($title)) {
-        header("Locatiom: ../list.php?mess=error");
+    if(empty($title)) {
+        header("Location: ../list.php?mess=error");
     } else {
         $stmt = $pdo->prepare("INSERT INTO list(title) VALUE(?)");
         $res = $stmt->execute([$title]);

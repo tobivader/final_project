@@ -1,13 +1,4 @@
-@import "./reset.css";
 @import "./navbar.css";  
-body {
-    font-size: 100%;
-    min-width: 100vw; 
-    min-height: 100vh; 
-    max-width: 100vw; 
-    max-height: 100vh;
-  }
-  
 main{
     display: grid;
     grid-template-rows: 60% 30%;
@@ -46,6 +37,7 @@ footer{
 }
 div#box1{
     border: black solid 0.6px;
+    box-shadow: 10px 10px 3px gray;
     transition: 0.4s;
     padding: 1em;
     text-align: center;
@@ -55,6 +47,7 @@ div#box1{
 div#box2{
     margin: 0em 1em;
     border: black solid 0.6px;
+    box-shadow: 10px 10px 3px gray;
     padding: 1em;
     transition: 0.4s;
     text-align: center;
@@ -63,6 +56,7 @@ div#box2{
 }
 div#box3{
     border: black solid 0.6px;
+    box-shadow: 10px 10px 3px gray;
     transition: 0.4s;
     padding: 1em;
     text-align: center;

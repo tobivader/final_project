@@ -1,0 +1,9 @@
+@import "./reset.css";
+body {
+    font-size: 100%;
+    min-width: 100vw; 
+    min-height: 100vh; 
+    max-width: 100vw; 
+    max-height: 100vh;
+  }
+  
