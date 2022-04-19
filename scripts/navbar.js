@@ -1,6 +1,8 @@
 //Code for Dynamic Navbar
 //Get the parent elements and its children
 const title=document.title;
+//Search button item
+const search_button=document.querySelector('#nav_search');
 //Navbar object
 const navbar=
 {

@@ -36,32 +36,44 @@ footer{
     grid-auto-flow: column;
 }
 div#box1{
+    z-index: -1;
     border: black solid 0.6px;
+    height: 15em;
+    width: 18em;
     box-shadow: 10px 10px 3px gray;
-    transition: 0.4s;
+    transition: 0.5s;
     padding: 1em;
-    text-align: center;
-    font-size: 3em;
+    text-align: left;
     white-space: nowrap;
+    overflow: clip;
 }
 div#box2{
+    z-index: -1;
     margin: 0em 1em;
+    height: 15em;
+    width: 18em;
     border: black solid 0.6px;
     box-shadow: 10px 10px 3px gray;
     padding: 1em;
-    transition: 0.4s;
-    text-align: center;
-    font-size: 4em;
+    transition: 0.5s;
+    text-align: left;
     white-space: nowrap;
+    overflow: clip;
 }
 div#box3{
+    z-index: -1;
     border: black solid 0.6px;
+    height: 15em;
+    width: 18em;
     box-shadow: 10px 10px 3px gray;
-    transition: 0.4s;
+    transition: 0.5s;
     padding: 1em;
-    text-align: center;
-    font-size: 3em;
+    text-align: left;
     white-space: nowrap;
+    overflow: clip;
+}
+.fade{
+    opacity: 0;
 }
 div#createList{
     border-top: solid black 1px;
@@ -71,5 +83,14 @@ div#createList{
     text-align: center;
 }
 p{
-    font-size: 0.7em;
+    font-size: 1em;
+}
+h3{
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+li{
+    margin-left: 1em;
+    font-size: 1em;
 }

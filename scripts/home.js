@@ -1,29 +1,74 @@
 'use strict';
 //Code for slideshow
 const slides=[];
-let slideIndex=0;
-slides[0]=document.getElementById("box1");
-slides[1]=document.getElementById("box2");
-slides[2]=document.getElementById("box3");
+//JS object for slide content
+const slide = {
+    slides_1:document.querySelector("#box1"),
+    slides_2:document.querySelector("#box2"),
+    slides_3:document.querySelector("#box3"),
+};
+//Move the content of the slide left after clicking the left button
+function leftButton()
+{
+    let temp = slide.slides_1.innerHTML;
+    //************** */
+    slide.slides_1.classList.add('fade');
+    setTimeout(()=>{
+        slide.slides_1.innerHTML=slide.slides_2.innerHTML;
+        slide.slides_1.classList.remove('fade')}, 800);
+    //************** */
+    setTimeout( ()=> {
+        slide.slides_2.classList.add('fade');
+        setTimeout(()=>{
+        slide.slides_2.innerHTML=slide.slides_3.innerHTML;
+        slide.slides_2.classList.remove('fade')}, 800);},1000);
+    //************** */
+    setTimeout(()=>{
+    slide.slides_3.classList.add('fade');
+    setTimeout(()=>{
+        slide.slides_3.innerHTML=temp;
+        slide.slides_3.classList.remove('fade')}, 800);},2000);
+
+}
+//Move the content of the slide right after clicking the right button
+function rightButton()
+{
+    let temp=slide.slides_3.innerHTML;
+    slide.slides_3.classList.add('fade')
+    setTimeout(()=>{
+        slide.slides_3.innerHTML=slide.slides_2.innerHTML;
+        slide.slides_3.classList.remove('fade')}, 800);
+
+    setTimeout(()=>{
+        slide.slides_2.classList.add('fade');
+        setTimeout(()=>{
+            slide.slides_2.innerHTML=slide.slides_1.innerHTML;
+            slide.slides_2.classList.remove('fade')}, 800);},1000);
+    setTimeout(()=>{
+        slide.slides_1.classList.add('fade');
+        setTimeout(()=>{
+            slide.slides_1.innerHTML=temp;
+            slide.slides_1.classList.remove('fade')}, 800);},2000);
+}
+function autoSlide()
+{
+    leftButton();
+    setTimeout(autoSlide, 7*1000);
+}
 
 window.addEventListener("DOMContentLoaded", () =>{
     //Get the left, right slide button
     const left= document.querySelector("button#left");
     const right= document.querySelector("button#right");
 
-    left.addEventListener("click",function()
+    autoSlide();    //Autoslide show after 6 secs
+
+    left.addEventListener("click",function()   //Event listener for left Button
     {
-        const temp=slides[0].innerHTML;
-        slides[0].innerHTML=slides[1].innerHTML;
-        slides[1].innerHTML=slides[2].innerHTML;
-        slides[2].innerHTML=temp;
+        leftButton();
     });
-    //Comment=
-    right.addEventListener("click", function()
+    right.addEventListener("click", function()  ////Event listener for right Button
     {
-        const temp=slides[2].innerHTML;
-        slides[2].innerHTML=slides[1].innerHTML;
-        slides[1].innerHTML=slides[0].innerHTML;
-        slides[0].innerHTML=temp;
+        rightButton();
     });
 });
