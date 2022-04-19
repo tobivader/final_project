@@ -1,6 +1,7 @@
 <?php
-    //Value in the search box
+    //Get the item in the search box
     $searchItem=$_POST['searchbox'] ?? null;
+    //If the sumbit button was clicked and a search item was entered
     if(isset($_POST['submit']) && strlen($searchItem)!=0)
     {
         $_SESSION['searchitem']=$searchItem;
@@ -13,7 +14,7 @@
     <div>
         <h1 id="logo">YOURLIST</h1>
         <form method="POST" enctype="multipart/form-data" action="">
-            <input id="searchbox" type="textbox" name="searchbox" placeholder="Find your friend or their list...">
+            <input id="searchbox" type="textbox" name="searchbox" placeholder="Search up a list...">
             <button type="submit" name="submit" id="nav_search">SEARCH</button>
         </form>
         <button id="open">&#9776; </button>
