@@ -128,10 +128,28 @@ input[type="password"] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  /* border: 1.5px solid #ccc; */
   box-sizing: border-box;
+  background: #f1f1f1;
 }
 
+.success{
+  border: 2px solid #ccc;
+  border-color: green;
+}
+
+.error{
+  border: 2px solid #ccc;
+  border-color: red;
+}
+
+
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
 
 /* Popup Buttons */
 #login_submit {
@@ -253,22 +271,7 @@ box-sizing: border-box;
   background-color: white;
 }
 
-/* Full-width input fields */
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-  background-color: #ddd;
-  outline: none;
-}
 
 /* Overwrite default styles of hr */
 hr {
@@ -308,12 +311,17 @@ a {
 }
 
 
-.error {
+/* .error {
   color: red;
   display: block;
   margin: 0.2em;
-}
+} */
 
 .hidden {
   display: none;
 }
+
+/* .form-control */
+
+
+

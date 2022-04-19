@@ -124,7 +124,6 @@ if(isset($_POST['submit'])){
     <title>Generic List</title>
     <link rel="stylesheet" href="styles/landing-page.css">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Lato:300,400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/signup.css">
     <!-- <script src="https://kit.fontawesome.com/1c8ee6a0f5.js" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/5e107f84cc.js" crossorigin="anonymous"></script>
     <script defer src="scripts/master.js"></script>
@@ -192,34 +191,38 @@ if(isset($_POST['submit'])){
         </div>
 
         <div id="signup_pop" class="modal">
-            <form action=" " method="post" novalidate class="modal-content animate">
-                <div>
+            <form action=" " method="post" id="s_form" novalidate class="modal-content animate">
+                <div class="form-control">
                     <i class="fa-solid fa-user"></i>
                     <label for="username"><b></b></label>
-                    <input type="text" name="username" id="username" placeholder="Enter Username" value="<?=$username?>" required>
+                    <input type="text" name="username" id="s_username"  placeholder="Enter Username" value="<?=$username?>" required>
+                    <small></small>
                     <!-- <span class="error <?=!isset($errors['username']) ? 'hidden' : "";?>">Please enter your username</span>
                     <span class="error <?=!isset($errors['']) ? 'hidden' : "";?>">Username already exits.</span> -->
                 </div>
 
-                <div>
+                <div class="form-control ">
                     <i class="fa-solid fa-envelope"></i>
                     <label for="email"><b></b></label>
-                    <input type="text" name="email" placeholder="Enter Email" required>
+                    <input type="text" name="email" id="s_email" placeholder="Enter Email" required>
                     <!-- <span class="error <?=!isset($errors['email']) ? 'hidden' : "";?>">Please enter a correct email</span> -->
+                    <small></small>
                 </div>
 
-                <div>
+                <div class="form-control">
                     <i class="fa-solid fa-lock"></i>
                     <label for="email"><b></b></label>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" id="s_password" placeholder="Password" required>
                     <!-- <span class="error <?=!isset($errors['password']) ? 'hidden' : "";?>">Please enter your password</span> -->
+                    <small></small>
                 </div>
 
-                <div>
+                <div class="form-control">
                     <i class="fa-solid fa-lock"></i>
                     <label for="email"><b></b></label>
-                    <input type="password" name="rp-password" placeholder="Repeat Password" required>
+                    <input type="password" name="rp-password" id="s_rp_password" placeholder="Repeat Password" required>
                     <!-- <span class="error <?=!isset($errors['rp-password']) ? 'hidden' : "";?>">Please repeat your password</span> -->
+                    <small></small>
                 </div>
 
 
