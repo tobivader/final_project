@@ -8,16 +8,15 @@ if (isset($_POST['id'])) {
     if (empty($id)) {
         echo  'error';
     } else {
-        $list = $pdo->prepare("SELECT id, checked FROM list WHERE id =?");
-        $list-> execute([$id]);
+        $list = $pdo->prepare("SELECT listid, checked FROM list WHERE id =?");
+        $list->execute([$id]);
         $list = $list->fetch();
         $uID = $list['id'];
-        $uchecked = $checked ? 0: 1;
-        $res = $conn->query("UPDATE list SET checked =$uchecked WHERE ID = $uID");
-        if($res){
+        $uchecked = $checked ? 0 : 1;
+        $res = $conn->query("UPDATE list SET checked =$uchecked WHERE id = $uID");
+        if ($res) {
             echo $checked;
-        }
-        else{
+        } else {
             echo "error";
         }
         $pdo = null;
@@ -26,4 +25,3 @@ if (isset($_POST['id'])) {
 } else {
     header("Location: ../list.ph?mess=error");
 }
-?>

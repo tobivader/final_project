@@ -13,7 +13,8 @@ $pdo = connectDB();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/additems.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script defer src="scripts/checkbox.js"> </script>
     <title>Your List</title>
 </head>
 
@@ -75,51 +76,6 @@ $pdo = connectDB();
         src = "./script/jquery-3.6.0.js"
     </script> -->
 
-    <script>
-        $(document).ready(function() {
-            $('.remove-to-do').click(function() {
-                const id = $(this).attr('id');
-                $.post("app/remove.php", {
-                        id: id
-                    },
-                    (data) => {
-                        alert(data);
-                        if (data) {
-                            $(this).parent().hide(600);
-
-                        }
-                    }
-                );
-
-
-            });
-            $(".check-box").click(function(e) {
-                const id = $(this).attr('data-todo-id');
-                $.post('app/check.php',{
-                    id: id
-                },
-                (data) => {
-                    if(data != 'error'){
-                      const h2 = $(this).next();  
-                      if(data == '1'){
-                          h2.removeClass('checked');
-
-                      }else{
-                          h2.addClass('checked');
-                      }
-                          
-                    }
-                });
-
-            });
-        });
-    </script>
-
-
-
-
-
-
-</body>
+    </body>
 
 </html>
