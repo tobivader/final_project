@@ -29,11 +29,9 @@
             if(contains(strtolower($data[$i]['title']), $searchArray))
             {
                 //Add the username and title to the list
-                $lists[$y]="<h3>". $data[$i]['username']."</h3 >";
-                $lists[$y].="<h3>". $data[$i]['title']."</h3 >";
+                $lists[$y]="<h3>". $data[$i]['username'].": " .$data[$i]['title']."</h3 >";
                 while($prevList==$currList)
                 {
-                    $lists[$y].="<li>".$data[$i]['Item']."</li>";
                     $prevList=$currList;
                     ++$i;
                     if($i>=count($data))
@@ -84,7 +82,7 @@
             <?php
                 foreach($lists as $results)
                 {
-                    echo "<div>".$results."</div>";
+                    echo "<li><a href=./list.php>".$results."</a></li>";
                 }
             ?>
         </section>
