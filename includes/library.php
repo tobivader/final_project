@@ -30,9 +30,9 @@ function connectDB()
 //Takes in $pdo - $database and an array to store the lists - $listItems
 function loadPublicLists($database, &$listItems)
 {
-    $list = "SELECT u.username, i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
-    WHERE l.userID=u.userID AND l.userID = i.userID AND i.listID = l.listID 
-    ORDER BY l.listID ";
+    $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
+    WHERE l.userID=u.userID AND i.listID = l.listID 
+    ORDER BY l.title ASC";
     $stmt_list = $database->query($list);
     $i=0;       //Index 0 is empty 
     $currList="";
@@ -45,6 +45,7 @@ function loadPublicLists($database, &$listItems)
             {
                   $i+=1;
                     $listItems[$i]="<h3>". $row['username']."</h3 >";
+                    $listItems[$i].="<h3>". $row['title']."</h3 >";
             }
             $listItems[$i].="<li>".$row['Item']."</li>";
             $currList=$row['listID'];
@@ -55,9 +56,9 @@ function loadPublicLists($database, &$listItems)
 //Function to fetch all the public and private lists from the db
 function loadLists($database, &$listItems)
 {
-    $list = "SELECT u.username, i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
-    WHERE l.userID=u.userID AND l.userID = i.userID AND i.listID = l.listID 
-    ORDER BY l.listID ";
+    $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
+    WHERE l.userID=u.userID AND i.listID = l.listID 
+    ORDER BY l.title ASC";
     $stmt_list = $database->query($list);
     $i=0;       //Index 0 is empty 
     $currList="";
@@ -68,6 +69,7 @@ function loadLists($database, &$listItems)
         {
             $i+=1;
             $listItems[$i]="<h3>". $row['username']."</h3 >";
+            $listItems[$i].="<h3>". $row['title']."</h3 >";
         }
         $listItems[$i].="<li>".$row['Item']."</li>";
         $currList=$row['listID'];
