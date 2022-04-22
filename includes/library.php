@@ -30,7 +30,7 @@ function connectDB()
 //Takes in $pdo - $database and an array to store the lists - $listItems
 function loadPublicLists($database, &$listItems)
 {
-    $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private, u.userID FROM `Users` u,`ListContent` i, `list` l 
+    $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
     WHERE l.userID=u.userID AND i.listID = l.listID 
     ORDER BY l.title ASC";
     $stmt_list = $database->query($list);
@@ -56,7 +56,7 @@ function loadPublicLists($database, &$listItems)
 //Function to fetch all the public and private lists from the db
 function loadLists($database, &$listItems)
 {
-    $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private, u.userID FROM `Users` u,`ListContent` i, `list` l 
+    $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
     WHERE l.userID=u.userID AND i.listID = l.listID 
     ORDER BY l.title ASC";
     $stmt_list = $database->query($list);

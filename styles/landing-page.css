@@ -139,10 +139,15 @@ input[type="password"] {
 }
 
 .error{
+  margin: 1em;
   border: 2px solid #ccc;
   border-color: red;
+  color: red;
 }
 
+.hidden {
+  display: none;
+}
 
 
 input[type="text"]:focus,

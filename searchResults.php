@@ -17,7 +17,7 @@
    function SearchDB($database, &$lists, $searchArray, &$listID, &$userID)
    {
         //Query and sort in alphabetical order
-        $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private, u.userID, l.exp_date FROM `Users` u,`ListContent` i, `list` l 
+        $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
         WHERE l.userID=u.userID AND i.listID = l.listID 
         ORDER BY l.title ASC";
         $stmt_list = $database->query($list);
