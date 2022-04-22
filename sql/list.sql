@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2022 at 12:25 AM
+-- Generation Time: Apr 21, 2022 at 11:24 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tobiakinnola`
+-- Database: `chigoziemuonagolu`
 --
 
 -- --------------------------------------------------------
@@ -29,11 +29,25 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `list` (
   `listID` int(11) NOT NULL,
   `userID` int(11) DEFAULT NULL,
-  `title` text DEFAULT NULL,
+  `title` text NOT NULL,
   `private` tinyint(1) NOT NULL DEFAULT 1,
   `checked` tinyint(1) NOT NULL DEFAULT 0,
   `exp_date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `list`
+--
+
+INSERT INTO `list` (`listID`, `userID`, `title`, `private`, `checked`, `exp_date`) VALUES
+(1, 1, 'Wedding list', 0, 1, '2022-04-16'),
+(2, 1, 'To do list', 0, 0, '2022-04-16'),
+(3, 1, 'Grocery list', 0, 0, '2022-04-16'),
+(4, 2, 'Games to Buy', 0, 0, '2022-12-01'),
+(5, 2, 'To do list', 0, 0, '2022-12-01'),
+(6, 3, 'To do list', 0, 0, '2022-12-01'),
+(7, 3, 'Wish List', 1, 0, '2022-12-01'),
+(8, 2, 'Wish List', 0, 0, '2022-12-01');
 
 --
 -- Indexes for dumped tables
@@ -54,7 +68,7 @@ ALTER TABLE `list`
 -- AUTO_INCREMENT for table `list`
 --
 ALTER TABLE `list`
-  MODIFY `listID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+  MODIFY `listID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- Constraints for dumped tables
 --
