@@ -24,5 +24,8 @@ li a:hover{
     color: white;
     background-color: black;
 }
+div{
+    padding: 0.5em 0em;
+}
 
 

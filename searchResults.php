@@ -1,6 +1,8 @@
 <?php
     session_start();
     $lists=array();
+    $userID=array();
+    $listID=array();
     $searchItem="";
    if(isset($_SESSION['searchitem']) && !empty($_SESSION['searchitem']))
    {
@@ -9,13 +11,13 @@
         //Call the database to load sample lists
         include 'includes/library.php';
         $pdo = connectDB();
-        SearchDB($pdo, $lists, $searchArray);
+        SearchDB($pdo, $lists, $searchArray, $listID, $userID);
    }
    //Query the data base for the searched word
-   function SearchDB($database, &$lists, $searchArray)
+   function SearchDB($database, &$lists, $searchArray, &$listID, &$userID)
    {
         //Query and sort in alphabetical order
-        $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private FROM `Users` u,`ListContent` i, `list` l 
+        $list = "SELECT DISTINCT u.username, l.title , i.Item, l.listID, l.private, u.userID, l.exp_date FROM `Users` u,`ListContent` i, `list` l 
         WHERE l.userID=u.userID AND i.listID = l.listID 
         ORDER BY l.title ASC";
         $stmt_list = $database->query($list);
@@ -28,8 +30,10 @@
             //Find the keyword
             if(contains(strtolower($data[$i]['title']), $searchArray))
             {
+                $listID[$y]=$currList;
+                $userID[$y]=$data[$i]['userID'];
                 //Add the username and title to the list
-                $lists[$y]="<h3>". $data[$i]['username'].": " .$data[$i]['title']."</h3 >";
+                $lists[$y]="<h3>". $data[$i]['username'].": " .$data[$i]['title']." <div>Expires: ".$data[$i]['exp_date']."</div></h3 >";
                 while($prevList==$currList)
                 {
                     $prevList=$currList;
@@ -80,9 +84,12 @@
         <h1>Search results for: "<?= $search ?>"</h1>
         <section>
             <?php
+                $i=0;
+                //Display each search result, and attach a link containing the listID and userID
                 foreach($lists as $results)
                 {
-                    echo "<li><a href=./list.php>".$results."</a></li>";
+                    echo "<li><a href=./tempList.php?listID=".$listID[$i]."&"."userID=".$userID[$i].">".$results."</a></li>";
+                    $i+=1;
                 }
             ?>
         </section>

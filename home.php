@@ -35,7 +35,7 @@
         <div id="createList">
         <p>Welcome to our generic list creator. Here your can create any type of list with differnet items in it<br>
             Start creating your various generic lists now with just a click
-            <span><a href="./list.php">Create</a></span></p>
+            <span><a href="./CreateList.php">Create</a></span></p>
         </div>
     </main>
 </body>

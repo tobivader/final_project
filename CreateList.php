@@ -4,10 +4,10 @@ session_start();
 require "./includes/library.php";
 
 //if user doesnt have a username  
-if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) { // password or username instead of password
-    header("Location: Login.php");
-    exit();
-}
+//if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) { // password or username instead of password
+   // header("Location: Login.php");
+    //exit();
+//}
 
 if (isset($_POST['submit'])) {  
 

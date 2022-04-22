@@ -1,10 +1,8 @@
 <?php
-require_once("./includes/library.php");
-$pdo = connectDB();
-
+    require_once("./includes/library.php");
+    $pdo = connectDB();
+    session_start();
 ?>
-
-
 
 <html lang="en">
 
